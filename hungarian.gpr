@@ -54,7 +54,7 @@ project Hungarian is
    package Compiler is
       for Default_Switches ("C")   use ("-g", "-Wall", "-O2");
       for Default_Switches ("C++") use ("-g", "-Wall", "-O2");
-      for Default_Switches ("Ada") use ("-g", "-gnatf", "-gnat05", "-gnatwcfjklmopruvz", "-gnatyacehikn", "-gnatqQ");
+      for Default_Switches ("Ada") use ("-g", "-gnatf", "-gnatwcfjklmopruvz", "-gnatyacehikn", "-gnatqQ");
 
       case Build is
          when "Profile" =>
@@ -68,7 +68,7 @@ project Hungarian is
             for Default_Switches ("C")   use Compiler'Default_Switches ("C")   & ("-O3");
             for Default_Switches ("C++") use Compiler'Default_Switches ("C")   & ("-O3");
          when "No_Options" =>
-            for Default_Switches ("Ada") use ("-gnat05");
+            for Default_Switches ("Ada") use ();
             --  Deliberately override default switches not to have any!
       end case;
    end Compiler;
